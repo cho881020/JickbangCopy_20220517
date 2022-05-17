@@ -2,6 +2,7 @@ package kr.nepp.jickbangcopy_20220517
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import kotlinx.android.synthetic.main.activity_view_room_detail.*
 import kr.nepp.jickbangcopy_20220517.datas.RoomData
 
 class ViewRoomDetailActivity : AppCompatActivity() {
@@ -11,8 +12,11 @@ class ViewRoomDetailActivity : AppCompatActivity() {
 
         val roomData = intent.getSerializableExtra("room") as RoomData
 
+        txtPrice.text = roomData.getFormattedPrice()
+        txtDescription.text = roomData.description
 
-
+        txtAddress.text = roomData.address
+        txtFloor.text = roomData.getFormattedFloor()
 
     }
 }
