@@ -7,6 +7,21 @@ class RoomData(
     val description: String,
 ) {
 
+    fun getFormattedPrice() : String {
+
+        if (this.price < 10000) {
+            return "%,d".format(this.price)
+        }
+        else {
+
+            val uk = this.price / 10000
+            val rest = this.price % 10000
+
+            return  "${uk}억 ${ "%,d".format(rest) }"
+        }
+
+    }
+
     fun getFormattedFloor() : String {
 
         if (this.floor >= 1) {
