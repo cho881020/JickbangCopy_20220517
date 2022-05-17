@@ -35,6 +35,7 @@ class MainActivity : AppCompatActivity() {
             val clickedRoom = mRoomList[position]
 
             val myIntent = Intent(this, ViewRoomDetailActivity::class.java)
+            myIntent.putExtra("room", clickedRoom)
             startActivity(myIntent)
 
         }
